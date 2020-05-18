@@ -5,14 +5,14 @@ apply plugin: 'kotlin-kapt'
 
 // app空壳 始终是 application
 android {
-    compileSdkVersion rootProject.ext.android["minSdkVersion"]
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     defaultConfig {
         applicationId "com.android.life"
-        minSdkVersion  rootProject.ext.android["minSdkVersion"]
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
+        versionCode  rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

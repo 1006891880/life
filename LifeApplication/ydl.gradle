@@ -19,14 +19,14 @@ ext {
     android = [
                compileSdkVersion       : 29,
                buildToolsVersion       : "29.0.1",
-               minSdkVersion           : 23,
+               minSdkVersion           : 17,
                targetSdkVersion        : 29,
                versionCode             : 1,
                versionName             : "1.0.0"    //必须是int或者float，否则影响线上升级
     ]
 
     version = [
-               androidSupportSdkVersion: "29.0.0",
+               androidSupportSdkVersion: "29.0.1",
                retrofitSdkVersion      : "2.4.0",
                glideSdkVersion         : "4.8.0",
                canarySdkVersion        : "1.5.4",

@@ -1,2 +1,3 @@
 rootProject.name='LifeApplication'
 include ':app'
+include ':library'

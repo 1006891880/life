@@ -15,11 +15,10 @@ ext {
     isMusicApplication = true  //音乐模块开关，false:作为Lib组件存在， true:作为application存在
     isNewsApplication = true  //新闻模块开关，false:作为Lib组件存在， true:作为application存在
 
-    
     android = [
                compileSdkVersion       : 29,
                buildToolsVersion       : "29.0.1",
-               minSdkVersion           : 17,
+               minSdkVersion           : 19,
                targetSdkVersion        : 29,
                versionCode             : 1,
                versionName             : "1.0.0"    //必须是int或者float，否则影响线上升级
@@ -65,7 +64,7 @@ ext {
 
 
                 //router
-                "router"                      : "com.alibaba:arouter-api:1.4.1",
+                "router"                      : "com.alibaba:arouter-api:1.5.0",
                 "router-compiler"             : "com.alibaba:arouter-compiler:1.2.2",
 
                 //image
@@ -81,7 +80,7 @@ ext {
                 "flowlayout"                : "com.zhy:flowlayout-lib:1.0.3",
 
                 //yc
-                "YCStateLib"                  : "cn.yc:YCStateLib:1.2.2",
+                "YCStateBarLib"                  : "cn.yc:YCStateLib:1.2.2",
                 "YCDialogLib"                 : "cn.yc:YCDialogLib:3.6.6",
                 "YCCountDownViewLib"          : "cn.yc:YCCountDownViewLib:1.0",
                 "YCUtilsLib"                  : "cn.yc:YCUtilsLib:1.6.2",

@@ -18,9 +18,10 @@ android {
         consumerProguardFiles 'consumer-rules.pro'
         kapt {
             arguments {
-                arg("AROUTER_MODULE_NAME",project.getName())
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
+
     }
 
     buildTypes {
@@ -96,8 +97,8 @@ dependencies {
     implementation rootProject.ext.dependencies["notificationLib"]
     implementation rootProject.ext.dependencies["WebViewLib"]
     kapt rootProject.ext.dependencies["glide-compiler"]
-    kapt rootProject.ext.dependencies["router-compiler"]
-
+//    kapt rootProject.ext.dependencies["router-compiler"]
+    kapt 'com.alibaba:arouter-annotation:1.0.4'
     //检测内存泄漏
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.1'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'

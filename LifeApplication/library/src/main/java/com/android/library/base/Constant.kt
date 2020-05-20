@@ -1,7 +1,7 @@
 package com.android.library.base
 
 import android.os.Environment
-import com.ycbjie.library.model.HomeBlogEntity
+import com.android.library.model.HomeBlogEntity
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 import java.util.*
@@ -16,11 +16,10 @@ import java.util.*
  * ================================================
  */
 object Constant {
-    const val REALM_VERSION = 1
+    const val REALM_VERSION = 1L
     const val REALM_NAME = "life"
     const val SP_NAME = "yc"
-    val EXTERNAL_STORAGE_DIRECTORY =
-        Environment.getExternalStorageDirectory().absolutePath + "/"
+    val EXTERNAL_STORAGE_DIRECTORY = Environment.getExternalStorageDirectory().absolutePath + "/"
     const val GITHUB = "https://github.com/yangchong211/YCBlogs"
     const val LIFE_HELPER = "https://github.com/yangchong211/LifeHelper"
     const val JIAN_SHU = "https://www.jianshu.com/u/b7b2c6ed9284"
@@ -54,8 +53,7 @@ object Constant {
     const val KEY_NIGHT_STATE = "night_state" //启动页夜间模式
     /**-------------------------------------集合------------------------------------------------- */ //
     var findNews: List<HomeBlogEntity> = ArrayList<HomeBlogEntity>()
-    var findBottomNews: List<HomeBlogEntity> =
-        ArrayList<HomeBlogEntity>()
+    var findBottomNews: List<HomeBlogEntity> = ArrayList<HomeBlogEntity>()
     /**-------------------------------------集合------------------------------------------------- */
     const val URL = "url"
     const val ID = "id"

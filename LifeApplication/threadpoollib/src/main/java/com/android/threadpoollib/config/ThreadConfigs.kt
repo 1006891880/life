@@ -4,7 +4,7 @@ import com.android.threadpoollib.callback.AsyncCallback
 import com.android.threadpoollib.callback.ThreadCallback
 import java.util.concurrent.Executor
 
-class ThreadConfigs<T> {
+class ThreadConfigs {
 
     //thread name
     var threadName : String? = null
@@ -19,6 +19,6 @@ class ThreadConfigs<T> {
     var threadCallback : ThreadCallback ? = null
 
     //异步 回调 callback
-    var asyncCallback : AsyncCallback<T>? = null
+    var asyncCallback : AsyncCallback? = null
 
 }

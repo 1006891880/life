@@ -8,7 +8,7 @@ class JavaDeliver :Executor {
         private var javaDeliver : JavaDeliver= JavaDeliver()
         fun getJavaDeliver() = javaDeliver
     }
-
+    private constructor(){}
     override fun execute(command: Runnable) {
         command.run()
     }

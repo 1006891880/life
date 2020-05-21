@@ -3,12 +3,12 @@ package com.android.threadpoollib.callback
 import java.util.concurrent.Executor
 
 //回调的委托类
-class NormalCallback<T> :ThreadCallback,AsyncCallback<T>{
+class NormalCallback :ThreadCallback,AsyncCallback{
 
     var threadCallback : ThreadCallback?= null
     var executor : Executor?= null
-    var asyncCallback : AsyncCallback<T>?= null
-    constructor(threadCallback: ThreadCallback,executor : Executor,asyncCallback: AsyncCallback<T>){
+    var asyncCallback : AsyncCallback?= null
+    constructor(threadCallback: ThreadCallback,executor : Executor,asyncCallback: AsyncCallback){
         this.threadCallback = threadCallback
         this.executor = executor
         this.asyncCallback = asyncCallback
@@ -40,7 +40,7 @@ class NormalCallback<T> :ThreadCallback,AsyncCallback<T>{
     }
 
     //回调成功
-    override fun success(t: T) {
+    override fun<T> success(t: T) {
         if (asyncCallback == null){
             return
         }

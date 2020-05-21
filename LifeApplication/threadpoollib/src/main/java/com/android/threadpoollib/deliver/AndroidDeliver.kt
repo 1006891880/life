@@ -13,7 +13,7 @@ class AndroidDeliver : Executor{
         private var androidDeliver : AndroidDeliver= AndroidDeliver()
         fun getAndroidDeliver() : AndroidDeliver = androidDeliver
     }
-
+    private constructor(){}
     override fun execute(command: Runnable) {
         //当前线程在 主线程
         if (Looper.myLooper() == Looper.getMainLooper()){

@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/statusbarlibrary" />
             <option value="$PROJECT_DIR$/threadpoollib" />
+            <option value="$PROJECT_DIR$/utilslibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

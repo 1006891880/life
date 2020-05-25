@@ -1,4 +1,4 @@
-package com.android.utilslibrary.webview
+package com.android.webviewlibrary
 
 import android.content.Context
 import android.os.Build

@@ -6,15 +6,7 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 import java.util.*
 
-/**
- * ================================================
- * 作    者：杨充
- * 版    本：1.0
- * 创建日期：2016/1/20
- * 描    述：存放基本常量
- * 修订历史：
- * ================================================
- */
+
 object Constant {
     const val REALM_VERSION = 1L
     const val REALM_NAME = "life"

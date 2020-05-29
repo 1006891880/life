@@ -3,8 +3,8 @@ package com.android.library.base
 import android.app.IntentService
 import android.content.Context
 import android.content.Intent
+import com.android.webviewlibrary.utils.X5WebUtils
 import com.blankj.utilcode.util.LogUtils
-import com.ycbjie.webviewlib.X5WebUtils
 
 class InitializeService :IntentService("initializeService") {
 

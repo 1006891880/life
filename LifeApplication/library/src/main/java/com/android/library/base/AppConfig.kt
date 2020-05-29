@@ -1,12 +1,12 @@
 package com.android.library.base
 
-import cn.ycbjie.ycthreadpoollib.PoolThread
 import com.alibaba.android.arouter.launcher.ARouter
+import com.android.dialoglibrary.toast.ToastUtils
 import com.android.library.base.callback.BaseLifecycleCallback
 import com.android.library.base.callback.LogCallback
+import com.android.threadpoollib.PoolThread
 import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.Utils
-import com.pedaily.yc.ycdialoglib.toast.ToastUtils
 import java.lang.Boolean
 
 enum class AppConfig {

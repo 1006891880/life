@@ -36,14 +36,14 @@
         android:layout_alignParentRight="true"
         android:orientation="horizontal"
         android:visibility="gone">
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_margin="10dp"
             app:srcCompat="@drawable/ic_gank_un_favorite"/>
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButto
             android:id="@+id/fab_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

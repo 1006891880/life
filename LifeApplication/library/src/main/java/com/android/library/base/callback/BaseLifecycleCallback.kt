@@ -4,7 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import android.util.Log
-import com.ns.yc.ycutilslib.activityManager.AppManager
+import com.android.utilslibrary.activitymanager.AppManager
 
 class BaseLifecycleCallback : Application.ActivityLifecycleCallbacks {
 
@@ -23,12 +23,12 @@ class BaseLifecycleCallback : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         Log.e("Activity生命周期", "onActivityCreated")
-        AppManager.getAppManager().addActivity(activity)
+        AppManager.getAppManager()?.addActivity(activity)
     }
 
     override fun onActivityDestroyed(activity: Activity) {
         Log.e("Activity生命周期", "onActivityDestroyed")
-        AppManager.getAppManager().removeActivity(activity)
+        AppManager.getAppManager()?.removeActivity(activity)
     }
 
     override fun onActivityPaused(activity: Activity) {

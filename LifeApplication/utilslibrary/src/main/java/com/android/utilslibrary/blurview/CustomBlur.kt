@@ -12,10 +12,12 @@ import androidx.annotation.NonNull
 
 object CustomBlur {
 
+    @JvmStatic
     fun apply(context: Context?, sentBitmap: Bitmap): Bitmap? {
         return apply(context, sentBitmap, 10)
     }
 
+    @JvmStatic
     @SuppressLint("NewApi")
     fun apply(
         context: Context?, @NonNull sentBitmap: Bitmap,

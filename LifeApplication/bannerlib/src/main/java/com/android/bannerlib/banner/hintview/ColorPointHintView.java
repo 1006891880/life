@@ -1,0 +1,46 @@
+package com.android.bannerlib.banner.hintview;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+
+import com.android.bannerlib.LibUtils;
+
+
+/**
+ * color
+ */
+@SuppressLint("ViewConstructor")
+public class ColorPointHintView extends ShapeHintView {
+
+    private int focusColor;
+    private int normalColor;
+
+    public ColorPointHintView(Context context, int focusColor, int normalColor) {
+        super(context);
+        this.focusColor = focusColor;
+        this.normalColor = normalColor;
+    }
+
+    @Override
+    public Drawable makeFocusDrawable() {
+        GradientDrawable dotFocus = new GradientDrawable();
+        dotFocus.setColor(focusColor);
+        dotFocus.setCornerRadius(LibUtils.dip2px(getContext(), 4));
+        dotFocus.setSize(LibUtils.dip2px(getContext(), 8),
+                LibUtils.dip2px(getContext(), 8));
+        return dotFocus;
+    }
+
+    @Override
+    public Drawable makeNormalDrawable() {
+        GradientDrawable dotNormal = new GradientDrawable();
+        dotNormal.setColor(normalColor);
+        dotNormal.setCornerRadius(LibUtils.dip2px(getContext(), 4));
+        dotNormal.setSize(LibUtils.dip2px(getContext(), 8),
+                LibUtils.dip2px(getContext(), 8));
+        return dotNormal;
+    }
+
+}

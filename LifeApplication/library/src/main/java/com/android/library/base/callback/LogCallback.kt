@@ -1,11 +1,12 @@
 package com.android.library.base.callback
 
-import cn.ycbjie.ycthreadpoollib.callback.ThreadCallback
+import com.android.threadpoollib.callback.ThreadCallback
 import com.blankj.utilcode.util.LogUtils
 
-class LogCallback :ThreadCallback {
+class LogCallback : ThreadCallback {
     private val TAG = "LogCallback"
-    override fun onError(threadName: String?, t: Throwable?) {
+
+    override fun onError(threadName: String, throwable: Throwable) {
         LogUtils.e("LogCallback" + "------onError")
         LogUtils.e(
             TAG,
@@ -13,13 +14,13 @@ class LogCallback :ThreadCallback {
                 "[任务线程%s]/[回调线程%s]执行失败: %s",
                 threadName,
                 Thread.currentThread(),
-                t!!.message
+                throwable!!.message
             ),
-            t
+            throwable
         )
     }
 
-    override fun onCompleted(threadName: String?) {
+    override fun onCompleted(threadName: String) {
         LogUtils.e("LogCallback" + "------onCompleted")
         LogUtils.e(
             TAG,
@@ -27,7 +28,7 @@ class LogCallback :ThreadCallback {
         )
     }
 
-    override fun onStart(threadName: String?) {
+    override fun onStart(threadName: String) {
         LogUtils.e("LogCallback" + "------onStart")
         LogUtils.e(
             TAG,

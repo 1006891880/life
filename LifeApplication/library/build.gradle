@@ -102,4 +102,12 @@ dependencies {
     //检测内存泄漏
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.1'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    implementation project(':bannerlib')
+    implementation project(':baseadapterlibrary')
+    implementation project(':statusbarlibrary')
+    implementation project(':threadpoollib')
+    implementation project(':utilslibrary')
+    implementation project(':webviewlibrary')
+    implementation project(':dialoglibrary')
+    implementation project(':refreshviewlibrary')
 }

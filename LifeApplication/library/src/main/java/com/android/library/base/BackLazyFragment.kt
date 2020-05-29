@@ -1,6 +1,7 @@
 package com.android.library.base
 
-import com.ns.yc.ycutilslib.fragmentBack.BackHandledFragment
+import com.android.utilslibrary.fragmentBack.BackHandledFragment
+
 
 class BackLazyFragment : BackHandledFragment() {
 }

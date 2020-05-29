@@ -142,6 +142,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation project(':library')
     kapt 'com.alibaba:arouter-annotation:1.0.4'
+    implementation project(path: ':bannerlib')
+    implementation project(path: ':statusbarlibrary')
+    implementation project(path: ':utilslibrary')
+    implementation project(path: ':refreshviewlibrary')
+    implementation project(path: ':baseadapterlibrary')
+//    implementation project(path: ':bannerlib')
+//    implementation project(path: ':statusbarlibrary')
+
+
 }

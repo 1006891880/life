@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.baseadapterlibrary.adapter.BaseAdapter;
+import com.android.baseadapterlibrary.adapter.BaseViewHolder;
 import com.android.life.R;
-import com.android.refreshviewlibrary.holder.BaseViewHolder;
 
 public class Snap2Adapter extends BaseAdapter<Integer> {
 
@@ -21,7 +21,7 @@ public class Snap2Adapter extends BaseAdapter<Integer> {
 
     @Override
     protected void bindData(BaseViewHolder holder, Integer data) {
-        Integer integer = getData().get(getViewPosition() % getData().size());
+        Integer integer = getData().get(data % getData().size());
         ImageView imageView = holder.getView(R.id.iv_image);
         imageView.setBackgroundResource(integer);
     }

@@ -107,7 +107,7 @@ dependencies {
     implementation project(':statusbarlibrary')
     implementation project(':threadpoollib')
     implementation project(':utilslibrary')
-    implementation project(':webviewlibrary')
+//    implementation project(':webviewlibrary')
     implementation project(':dialoglibrary')
     implementation project(':refreshviewlibrary')
 }

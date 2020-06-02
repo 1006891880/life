@@ -17,7 +17,7 @@ import com.android.bannerlib.BuildConfig;
 
 /**
  * 自定义LayoutManager
- *  *     revise: 这也也是间接参考LinearLayoutManager源码
+ *  revise: 这也也是间接参考LinearLayoutManager源码
  */
 public class GalleryLayoutManager extends LinearLayoutManager implements RecyclerView.SmoothScroller.ScrollVectorProvider {
 

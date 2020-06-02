@@ -15,9 +15,6 @@ import com.android.bannerlib.banner.view.BannerView;
 import com.android.life.MainActivity;
 import com.android.life.R;
 
-
-
-
 public class SplashBannerBarActivity extends AppCompatActivity {
 
     private int[] imgs = {

@@ -15,12 +15,24 @@ import com.android.library.R
 /**
  * 意见反馈界面
  */
-class MultiEditInputView @JvmOverloads constructor(
-    private val mContext: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) :
-    LinearLayout(mContext, attrs, defStyleAttr) {
+class MultiEditInputView  : LinearLayout{
+
+    constructor( context: Context,
+                 attrs: AttributeSet? = null,
+                 defStyleAttr: Int = 0):super(context,attrs,defStyleAttr){
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.MultiEditInputView)
+        MAX_COUNT = typedArray.getInteger(R.styleable.MultiEditInputView_maxCount, DEFAULT_MAX_COUNT)
+        ignoreCnOrEn = typedArray.getBoolean(R.styleable.MultiEditInputView_IgnoreCnOrEn, true)
+        hintText = typedArray.getString(R.styleable.MultiEditInputView_hintText)
+        contentText = typedArray.getString(R.styleable.MultiEditInputView_contentText)
+        contentHeight = typedArray.getDimension(
+            R.styleable.MultiEditInputView_contentHeight,
+            DEFAULT_CONTENT_HEIGHT.toFloat()
+        )
+        typedArray.recycle()
+        init(context)
+    }
+
     private var id_et_input: EditText? = null
     private var id_tv_input: TextView? = null
     private var MAX_COUNT: Int = 0
@@ -29,8 +41,8 @@ class MultiEditInputView @JvmOverloads constructor(
     private var contentText: String?
     private val contentHeight: Float
     var id_ll_multi: LinearLayout? = null
-    private fun init() {
-        val view: View = LayoutInflater.from(mContext).inflate(R.layout.view_multi_edit_input, this)
+    private fun init( context: Context) {
+        val view: View = LayoutInflater.from(context).inflate(R.layout.view_multi_edit_input, this)
         id_ll_multi = view.findViewById<View>(R.id.id_ll_multi) as LinearLayout
         id_ll_multi!!.setBackgroundResource(R.drawable.view_selector_edit_text_multi)
         id_et_input = view.findViewById<View>(R.id.id_et_input) as EditText
@@ -154,19 +166,5 @@ class MultiEditInputView @JvmOverloads constructor(
             val scale = context.resources.displayMetrics.density
             return (dp * scale + 0.5f).toInt()
         }
-    }
-
-    init {
-        val typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.MultiEditInputView)
-        MAX_COUNT = typedArray.getInteger(R.styleable.MultiEditInputView_maxCount, DEFAULT_MAX_COUNT)
-        ignoreCnOrEn = typedArray.getBoolean(R.styleable.MultiEditInputView_IgnoreCnOrEn, true)
-        hintText = typedArray.getString(R.styleable.MultiEditInputView_hintText)
-        contentText = typedArray.getString(R.styleable.MultiEditInputView_contentText)
-        contentHeight = typedArray.getDimension(
-            R.styleable.MultiEditInputView_contentHeight,
-            DEFAULT_CONTENT_HEIGHT.toFloat()
-        )
-        typedArray.recycle()
-        init()
     }
 }

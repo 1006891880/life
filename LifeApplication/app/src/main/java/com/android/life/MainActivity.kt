@@ -1,15 +1,16 @@
 package com.android.life
 
+import android.Manifest
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.android.library.base.Constant
 import com.android.life.testbannerlib.BannerActivity
 import com.android.life.testdialog.DialogMainActivity
-import com.android.webviewlibrary.X5WebView
-import java.sql.Array
-import java.util.*
+import com.android.life.testwebview.WebViewMainActivity
+import pub.devrel.easypermissions.AfterPermissionGranted
+import pub.devrel.easypermissions.EasyPermissions
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
     }
 
     fun  onBannerBar(view : View){
@@ -25,4 +27,11 @@ class MainActivity : AppCompatActivity() {
     fun  onDialogClick(view : View){
         startActivity(Intent(this, DialogMainActivity::class.java))
     }
+    fun onWebViewClick(view: View){
+        startActivity(Intent(this, WebViewMainActivity::class.java))
+    }
+
+
+
+
 }

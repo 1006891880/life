@@ -126,6 +126,7 @@ class MaterialRippleLayout @JvmOverloads constructor(
                     setPositionInAdapter()
                     eventCancelled = false
                     pendingPressEvent = PressedEvent(event)
+                    var isInScrollingContainer = getIsInScrollingContainer()
                     if (isInScrollingContainer) {
                         cancelPressedEvent()
                         prepressed = true
@@ -277,17 +278,21 @@ class MaterialRippleLayout @JvmOverloads constructor(
             ).toFloat() * 1.2f
         }
 
-    private val isInScrollingContainer: Boolean
-        private get() {
-            var p = parent
-            while (p != null && p is ViewGroup) {
-                if (p.shouldDelayChildPressedState()) {
-                    return true
-                }
-                p = p.getParent()
+
+    private fun getIsInScrollingContainer():Boolean{
+        var p = parent
+        while (p != null && p is ViewGroup) {
+            if (p.shouldDelayChildPressedState()) {
+                return true
             }
-            return false
+            p = p.getParent()
         }
+        return false
+    }
+//
+//    private val isInScrollingContainer: Boolean = getIsInScrollingContainer()
+
+
 
     private fun findParentAdapterView(): AdapterView<*>? {
         if (parentAdapter != null) {

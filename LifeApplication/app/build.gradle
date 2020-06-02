@@ -152,5 +152,7 @@ dependencies {
     implementation project(':library')
     implementation 'com.google.android.material:material:1.1.0'
 
+    // EasyPermission
+    implementation 'pub.devrel:easypermissions:3.0.0'
 
 }

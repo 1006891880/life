@@ -57,13 +57,40 @@ import com.android.library.R
     }
  *
  */
-class CountDownView @JvmOverloads constructor(
-    //上下文
-    private val mContext: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) : View(mContext, attrs, defStyleAttr) {
+class CountDownView  : View {
     private var mPaintBackGround : Paint? = null//背景画笔
+
+
+    constructor( context: Context,
+                 attrs: AttributeSet? = null,
+                 defStyleAttr: Int = 0):super(context,attrs,defStyleAttr){
+        val array = context.obtainStyledAttributes(attrs, R.styleable.CountDownView)
+        mRetreatType = array.getInt(R.styleable.CountDownView_cd_retreat_type, 1)
+        location = array.getInt(R.styleable.CountDownView_cd_location, 1)
+        mCircleRadius = array.getDimension(
+            R.styleable.CountDownView_cd_circle_radius,
+            dip2px(context, 25f).toFloat()
+        ).toInt() //默认25dp
+        mPaintArcWidth = array.getDimension(
+            R.styleable.CountDownView_cd_arc_width,
+            dip2px(context, 3f).toFloat()
+        ) //默认3dp
+        mPaintArcColor = array.getColor(R.styleable.CountDownView_cd_arc_color, mPaintArcColor)
+        mTextSize = array.getDimension(
+            R.styleable.CountDownView_cd_text_size,
+            dip2px(context, 14f).toFloat()
+        ).toInt() //默认14sp
+        mTextColor = array.getColor(R.styleable.CountDownView_cd_text_color, mTextColor)
+        mPaintBackGroundColor =
+            array.getColor(R.styleable.CountDownView_cd_bg_color, mPaintBackGroundColor)
+        mLoadingTime = array.getInteger(R.styleable.CountDownView_cd_animator_time, 3) //默认3秒
+        mLoadingTimeUnit = array.getString(R.styleable.CountDownView_cd_animator_time_unit) //时间单位
+        if (TextUtils.isEmpty(mLoadingTimeUnit)) {
+            mLoadingTimeUnit = ""
+        }
+        array.recycle()
+        init(context)
+    }
 
     private var mPaintArc : Paint? = null//圆弧画笔
     private var mPaintText: Paint? = null //文字画笔
@@ -88,11 +115,9 @@ class CountDownView @JvmOverloads constructor(
     private var rectF :RectF= RectF()
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    private fun init() { //背景设为透明，然后造成圆形View的视觉错觉
-        this.background = ContextCompat.getDrawable(
-            mContext,
-            android.R.color.transparent
-        )
+    private fun init(context: Context) { //背景设为透明，然后造成圆形View的视觉错觉
+        this.background = ContextCompat.getDrawable(context, android.R.color.transparent)
+
         mPaintBackGround = Paint()
         mPaintBackGround!!.style = Paint.Style.FILL
         mPaintBackGround!!.isAntiAlias = true
@@ -237,34 +262,5 @@ class CountDownView @JvmOverloads constructor(
             val scale = context.resources.displayMetrics.density
             return (dpValue * scale + 0.5f).toInt()
         }
-    }
-
-    init {
-        val array = mContext.obtainStyledAttributes(attrs, R.styleable.CountDownView)
-        mRetreatType = array.getInt(R.styleable.CountDownView_cd_retreat_type, 1)
-        location = array.getInt(R.styleable.CountDownView_cd_location, 1)
-        mCircleRadius = array.getDimension(
-            R.styleable.CountDownView_cd_circle_radius,
-            dip2px(mContext, 25f).toFloat()
-        ).toInt() //默认25dp
-        mPaintArcWidth = array.getDimension(
-            R.styleable.CountDownView_cd_arc_width,
-            dip2px(mContext, 3f).toFloat()
-        ) //默认3dp
-        mPaintArcColor = array.getColor(R.styleable.CountDownView_cd_arc_color, mPaintArcColor)
-        mTextSize = array.getDimension(
-            R.styleable.CountDownView_cd_text_size,
-            dip2px(mContext, 14f).toFloat()
-        ).toInt() //默认14sp
-        mTextColor = array.getColor(R.styleable.CountDownView_cd_text_color, mTextColor)
-        mPaintBackGroundColor =
-            array.getColor(R.styleable.CountDownView_cd_bg_color, mPaintBackGroundColor)
-        mLoadingTime = array.getInteger(R.styleable.CountDownView_cd_animator_time, 3) //默认3秒
-        mLoadingTimeUnit = array.getString(R.styleable.CountDownView_cd_animator_time_unit) //时间单位
-        if (TextUtils.isEmpty(mLoadingTimeUnit)) {
-            mLoadingTimeUnit = ""
-        }
-        array.recycle()
-        init()
     }
 }

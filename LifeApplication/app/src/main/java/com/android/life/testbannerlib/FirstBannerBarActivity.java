@@ -16,10 +16,7 @@ import com.android.bannerlib.banner.view.BannerView;
 import com.android.life.R;
 
 
-/**
- * Created by PC on 2017/11/21.
- * 作者：PC
- */
+
 
 public class FirstBannerBarActivity extends AppCompatActivity {
 

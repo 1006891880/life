@@ -3,15 +3,7 @@ package com.android.bannerlib;
 
 import android.content.Context;
 
-/**
- * <pre>
- *     @author yangchong
- *     blog  : https://github.com/yangchong211
- *     time  : 2018/4/17
- *     desc  : 工具类
- *     revise:
- * </pre>
- */
+
 public class LibUtils {
 
     public static int dip2px(Context ctx, float dpValue) {

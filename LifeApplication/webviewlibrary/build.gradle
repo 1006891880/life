@@ -17,8 +17,13 @@ android {
         // 腾讯 x5
         // Specifies the ABI configurations of your native
         // libraries Gradle should build and package with your APK.
+//        ndk {
+//            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+//        }
         ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64', 'arm64-v8a'
         }
     }
 

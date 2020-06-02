@@ -11,15 +11,17 @@ import android.view.View
 /**
  * 出现错误时候展示的view
  */
-class CustomWrongView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) :
-    View(context, attrs, defStyleAttr) {
+class CustomWrongView : View{
+
+    constructor( context: Context,
+                 attrs: AttributeSet? = null,
+                 defStyleAttr: Int = 0):super(context,attrs,defStyleAttr){
+        initPaint(context)
+    }
+
     private val TAG = this.javaClass.simpleName
     private var listener: OnFinishListener? = null
-    private var mContext: Context? = null
+     var mWrongContext: Context? = null
     private var mWidth = 0
     private var mPadding = 0f
     private var mPaint: Paint? = null
@@ -45,7 +47,7 @@ class CustomWrongView @JvmOverloads constructor(
             } else if (widthSpecMode != MeasureSpec.AT_MOST) {
                 widthSpecSize
             } else {
-                dip2px(mContext, 80f)
+                dip2px(mWrongContext!!, 80f)
             }
         setMeasuredDimension(mWidth, mWidth)
         mPadding = 8f
@@ -53,7 +55,7 @@ class CustomWrongView @JvmOverloads constructor(
     }
 
     private fun initPaint(context: Context) {
-        mContext = context
+        mWrongContext = context
         mPaint = Paint()
         //抗锯齿
         mPaint!!.isAntiAlias = true
@@ -184,12 +186,9 @@ class CustomWrongView @JvmOverloads constructor(
         listener = f
     }
 
-    private fun dip2px(context: Context?, dpValue: Float): Int {
-        val scale = context!!.resources.displayMetrics.density
+    private fun dip2px(context: Context, dpValue: Float): Int {
+        val scale = context.resources.displayMetrics.density
         return (dpValue * scale + 0.5f).toInt()
     }
 
-    init {
-        initPaint(context)
-    }
 }

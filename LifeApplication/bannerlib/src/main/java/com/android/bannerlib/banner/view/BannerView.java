@@ -85,6 +85,7 @@ public class BannerView extends RelativeLayout {
             }
         }
 
+
         @Override
         public void initView(int length, int gravity,BaseHintView hintView) {
             if (hintView!=null){
@@ -141,8 +142,8 @@ public class BannerView extends RelativeLayout {
         hintMode = type.getInteger(R.styleable.BannerView_hint_mode, 0);
         gravity = type.getInteger(R.styleable.BannerView_hint_gravity, 1);
 		delay = type.getInt(R.styleable.BannerView_play_delay, 0);
-		color = type.getColor(R.styleable.BannerView_hint_color, Color.BLACK);
-		alpha = type.getInt(R.styleable.BannerView_hint_alpha, 0);
+        alpha = type.getInt(R.styleable.BannerView_hint_alpha, 0);
+        color = type.getColor(R.styleable.BannerView_hint_color, Color.BLACK);
 		paddingLeft = (int) type.getDimension(R.styleable.BannerView_hint_paddingLeft, 0);
 		paddingRight = (int) type.getDimension(R.styleable.BannerView_hint_paddingRight, 0);
 		paddingTop = (int) type.getDimension(R.styleable.BannerView_hint_paddingTop, 0);
@@ -176,6 +177,7 @@ public class BannerView extends RelativeLayout {
                 new GestureDetector.SimpleOnGestureListener(){
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
+                //在按下并抬起时发生，只要符合这个条件就触发该函数，没有任何附加条件。
                 if (mOnItemClickListener!=null){
                     if (mAdapter instanceof AbsLoopPagerAdapter){
                         int count = ((AbsLoopPagerAdapter) mAdapter).getRealCount();
@@ -245,7 +247,6 @@ public class BannerView extends RelativeLayout {
 
     /**
      * 用静态内部类来防止持有外部类的隐性引用，避免之前总是内存泄漏
-     * https://github.com/yangchong211
      */
     private TimeTaskHandler mHandler = new TimeTaskHandler(this);
     private final static class TimeTaskHandler extends Handler {

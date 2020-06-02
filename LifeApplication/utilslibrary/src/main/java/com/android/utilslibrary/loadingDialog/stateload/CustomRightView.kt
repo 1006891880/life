@@ -12,14 +12,16 @@ import android.view.View
 /**
  * 出现正确或成功时候展示的view
  */
-class CustomRightView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) :
-    View(context, attrs, defStyleAttr) {
+class CustomRightView  : View{
+
+    constructor( context: Context,
+                 attrs: AttributeSet? = null,
+                 defStyleAttr: Int = 0):super(context,attrs,defStyleAttr){
+        init(context)
+    }
+
     private var listener: OnFinishListener? = null
-    private var mContext: Context? = null
+     var mRightContext: Context? = null
     private var mWidth = 0
     private var mPadding = 0f
     private var mPaint: Paint? = null
@@ -45,7 +47,7 @@ class CustomRightView @JvmOverloads constructor(
             } else if (widthSpecMode != MeasureSpec.AT_MOST) {
                 widthSpecSize
             } else {
-                dip2px(mContext, 80f)
+                dip2px(mRightContext!!, 80f)
             }
         setMeasuredDimension(mWidth, mWidth)
         mPadding = 8f
@@ -59,7 +61,7 @@ class CustomRightView @JvmOverloads constructor(
         mPaint!!.style = Paint.Style.STROKE
         mPaint!!.color = Color.WHITE
         mPaint!!.strokeWidth = 8f
-        mContext = context
+        mRightContext = context
     }
 
     var progress = 0
@@ -199,7 +201,7 @@ class CustomRightView @JvmOverloads constructor(
         return (dpValue * scale + 0.5f).toInt()
     }
 
-    init {
-        init(context)
-    }
+//    init {
+//
+//    }
 }

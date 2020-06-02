@@ -50,7 +50,7 @@ public class SecondBannerBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_banner_second);
 
         initBanner();
     }

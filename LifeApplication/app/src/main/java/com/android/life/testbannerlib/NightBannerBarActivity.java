@@ -46,7 +46,7 @@ public class NightBannerBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_night);
+        setContentView(R.layout.activity_banner_night);
         StateAppBar.translucentStatusBar(this,true);
         mRecyclerView = findViewById(R.id.recyclerView);
         fl_container = findViewById(R.id.fl_container);

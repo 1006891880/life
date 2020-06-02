@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.life.R;
-import com.android.webviewlibrary.ProgressWebView;
 import com.android.webviewlibrary.X5WebView;
 
 public class SecondActivity extends AppCompatActivity {
@@ -55,7 +54,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_banner_second);
 //        ProgressWebView view = findViewById(R.id.view);
         String url = "http://www.baidu.com";
 //        webView=  view.getWebView();

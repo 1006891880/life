@@ -3,9 +3,7 @@ package com.android.life.testbannerlib;
 
 import android.content.Context;
 import android.util.Log;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.android.baseadapterlibrary.adapter.BaseAdapter;
 import com.android.baseadapterlibrary.adapter.BaseViewHolder;
@@ -15,7 +13,7 @@ public class Snap2AdapterBannerBar extends BaseAdapter<Integer> {
 
 
     Snap2AdapterBannerBar(Context context) {
-        super(context, R.layout.item_snap2);
+        super(context, R.layout.item_snap2_banner);
     }
 
 

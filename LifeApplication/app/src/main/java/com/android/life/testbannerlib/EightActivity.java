@@ -63,7 +63,7 @@ public class EightActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eight);
+        setContentView(R.layout.activity_banner_eight);
         StateAppBar.translucentStatusBar(this,true);
         mRecyclerView = findViewById(R.id.recyclerView);
         recyclerView2 = findViewById(R.id.recyclerView2);

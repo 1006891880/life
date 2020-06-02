@@ -27,7 +27,7 @@ public class SnapAdapterBannerBar extends RecyclerArrayAdapter<String> {
         private final TextView textView;
 
         MyViewHolder(ViewGroup parent) {
-            super(parent, R.layout.item_snap);
+            super(parent, R.layout.item_snap_banner);
             imageView = getView(R.id.iv_image);
             textView = getView(R.id.tv_title);
         }

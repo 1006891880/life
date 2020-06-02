@@ -3,6 +3,7 @@
     package="com.android.life">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,6 +28,8 @@
         <activity android:name=".testbannerlib.NightBannerBarActivity"/>
         <activity android:name=".testbannerlib.BannerActivity"
             android:label="@string/banner_name"/>
+        <activity android:name=".testdialog.TestActivity"/>
+        <activity android:name=".testdialog.DialogMainActivity"/>
     </application>
 
 </manifest>

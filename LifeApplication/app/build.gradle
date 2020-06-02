@@ -150,7 +150,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     kapt 'com.alibaba:arouter-annotation:1.0.4'
     implementation project(':library')
-
+    implementation 'com.google.android.material:material:1.1.0'
 
 
 }

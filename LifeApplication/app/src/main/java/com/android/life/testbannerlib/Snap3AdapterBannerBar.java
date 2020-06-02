@@ -38,7 +38,7 @@ public class Snap3AdapterBannerBar extends RecyclerView.Adapter <Snap3AdapterBan
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_snap2, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_snap2_banner, parent, false);
         return new MyViewHolder(view);
     }
 

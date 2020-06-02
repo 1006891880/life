@@ -28,7 +28,7 @@ public class SevenBannerBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seven);
+        setContentView(R.layout.activity_banner_seven);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView2 = (RecyclerView) findViewById(R.id.recyclerView2);
         mRecyclerView3 = (RecyclerView) findViewById(R.id.recyclerView3);

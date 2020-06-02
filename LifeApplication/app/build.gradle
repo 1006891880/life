@@ -137,6 +137,8 @@ static def releaseTime() {
 }
 
 dependencies {
+    // implementation声明的依赖包只限于模块内部使用，不允许其他模块使用。
+    //  api声明的依赖包时, 模块依赖于此模块，此模块使用api声明的依赖包是可以被其他模块使用
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -145,19 +147,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    webviewlibrary-release.aar
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation project(':library')
     kapt 'com.alibaba:arouter-annotation:1.0.4'
-    implementation project(path: ':bannerlib')
-    implementation project(path: ':statusbarlibrary')
-    implementation project(path: ':utilslibrary')
-    implementation project(path: ':refreshviewlibrary')
-    implementation project(path: ':baseadapterlibrary')
-    implementation(name: 'webviewlibrary-release', ext: 'aar')
-//    implementation project(path: ':webviewlibrary')
-//    implementation project(path: ':bannerlib')
-//    implementation project(path: ':statusbarlibrary')
+    implementation project(':library')
+
 
 
 }

@@ -30,7 +30,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -97,17 +101,17 @@ dependencies {
 //    implementation rootProject.ext.dependencies["notificationLib"]
 //    implementation rootProject.ext.dependencies["WebViewLib"]
     kapt rootProject.ext.dependencies["glide-compiler"]
-//    kapt rootProject.ext.dependencies["router-compiler"]
     kapt 'com.alibaba:arouter-annotation:1.0.4'
     //检测内存泄漏
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.1'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
-    implementation project(':bannerlib')
-    implementation project(':baseadapterlibrary')
-    implementation project(':statusbarlibrary')
-    implementation project(':threadpoollib')
-    implementation project(':utilslibrary')
-//    implementation project(':webviewlibrary')
-    implementation project(':dialoglibrary')
-    implementation project(':refreshviewlibrary')
+    api project(':bannerlib')
+    api project(':baseadapterlibrary')
+    api project(':statusbarlibrary')
+    api project(':threadpoollib')
+    api project(':utilslibrary')
+    api project(':refreshviewlibrary')
+    api project(':dialoglibrary')
+    api project(':webviewlibrary')
+
 }

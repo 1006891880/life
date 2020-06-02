@@ -53,7 +53,13 @@
         <activity android:name=".testwebview.WebViewSecondActivity" />
         <activity android:name=".testwebview.WebViewSixActivity" />
         <activity android:name=".testwebview.WebViewThreeActivity" />
-
+          <!--baseAdapter-->
+        <activity android:name=".testbaseadapterlib.first.FirstActivity"/>
+        <activity android:name=".testbaseadapterlib.five.FiveActivity"/>
+        <activity android:name=".testbaseadapterlib.four.FourActivity"/>
+        <activity android:name=".testbaseadapterlib.second.SecondActivity"/>
+        <activity android:name=".testbaseadapterlib.third.ThirdActivity"/>
+        <activity android:name=".testbaseadapterlib.BaseAdapterMainActivity"/>
     </application>
 
 </manifest>

@@ -398,14 +398,17 @@ public abstract class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseM
             if (footerView.hashCode() == viewType){
                 View view = footerView.onCreateView(parent);
                 StaggeredGridLayoutManager.LayoutParams layoutParams;
-                if (view.getLayoutParams()!=null) {
-                    layoutParams = new StaggeredGridLayoutManager.LayoutParams(view.getLayoutParams());
-                } else {
-                    layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                if (view != null){
+                    if (view.getLayoutParams()!=null) {
+                        layoutParams = new StaggeredGridLayoutManager.LayoutParams(view.getLayoutParams());
+                    } else {
+                        layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    }
+                    layoutParams.setFullSpan(true);
+                    view.setLayoutParams(layoutParams);
+                    return view;
                 }
-                layoutParams.setFullSpan(true);
-                view.setLayoutParams(layoutParams);
-                return view;
+
             }
         }
         return null;

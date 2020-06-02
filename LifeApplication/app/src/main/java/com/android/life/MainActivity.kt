@@ -1,16 +1,13 @@
 package com.android.life
 
-import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.android.library.base.Constant
 import com.android.life.testbannerlib.BannerActivity
+import com.android.life.testbaseadapterlib.BaseAdapterMainActivity
 import com.android.life.testdialog.DialogMainActivity
 import com.android.life.testwebview.WebViewMainActivity
-import pub.devrel.easypermissions.AfterPermissionGranted
-import pub.devrel.easypermissions.EasyPermissions
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun onWebViewClick(view: View){
         startActivity(Intent(this, WebViewMainActivity::class.java))
+    }
+    fun onBaseAdapteeClick(view: View){
+        startActivity(Intent(this, BaseAdapterMainActivity::class.java))
     }
 
 

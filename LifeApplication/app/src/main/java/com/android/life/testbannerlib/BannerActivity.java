@@ -82,31 +82,31 @@ public class BannerActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_1:
-                startActivity(new Intent(this, FirstActivity.class));
+                startActivity(new Intent(this, FirstBannerBarActivity.class));
                 break;
             case R.id.tv_2:
-                startActivity(new Intent(this, SecondActivity.class));
+                startActivity(new Intent(this, SecondBannerBarActivity.class));
                 break;
             case R.id.tv_3:
-                startActivity(new Intent(this, ThirdActivity.class));
+                startActivity(new Intent(this, ThirdBannerBarActivity.class));
                 break;
             case R.id.tv_4:
-                startActivity(new Intent(this, FourActivity.class));
+                startActivity(new Intent(this, FourBannerBarActivity.class));
                 break;
             case R.id.tv_5:
-                startActivity(new Intent(this, SplashActivity.class));
+                startActivity(new Intent(this, SplashBannerBarActivity.class));
                 break;
             case R.id.tv_6:
-                startActivity(new Intent(this, SixActivity.class));
+                startActivity(new Intent(this, SixBannerBarActivity.class));
                 break;
             case R.id.tv_7:
-                startActivity(new Intent(this,SevenActivity.class));
+                startActivity(new Intent(this, SevenBannerBarActivity.class));
                 break;
             case R.id.tv_8:
                 startActivity(new Intent(this,EightActivity.class));
                 break;
             case R.id.tv_9:
-                startActivity(new Intent(this,NightActivity.class));
+                startActivity(new Intent(this, NightBannerBarActivity.class));
                 break;
             default:
                 break;

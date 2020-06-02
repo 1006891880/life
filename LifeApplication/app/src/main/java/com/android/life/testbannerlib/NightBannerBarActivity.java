@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class NightActivity extends AppCompatActivity {
+public class NightBannerBarActivity extends AppCompatActivity {
 
     private GalleryRecyclerView mRecyclerView;
     private GalleryRecyclerView recyclerView2;
@@ -58,7 +58,7 @@ public class NightActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        Snap3Adapter adapter = new Snap3Adapter(this);
+        Snap3AdapterBannerBar adapter = new Snap3AdapterBannerBar(this);
         adapter.setData(getData());
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setFlingSpeed(15000);
@@ -82,7 +82,7 @@ public class NightActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView2() {
-        Snap3Adapter adapter = new Snap3Adapter(this);
+        Snap3AdapterBannerBar adapter = new Snap3AdapterBannerBar(this);
         adapter.setData(getData());
         recyclerView2.setAdapter(adapter);
         recyclerView2.setFlingSpeed(8000);
@@ -103,7 +103,7 @@ public class NightActivity extends AppCompatActivity {
         manager.attach(recyclerView3,100);
         manager.setItemTransformer(new GalleryScaleTransformer( 0.0f,30));
         recyclerView3.setLayoutManager(manager);
-        Snap3Adapter adapter = new Snap3Adapter(this);
+        Snap3AdapterBannerBar adapter = new Snap3AdapterBannerBar(this);
         adapter.setData(getData());
         recyclerView3.setAdapter(adapter);
     }
@@ -131,7 +131,7 @@ public class NightActivity extends AppCompatActivity {
      * 设置背景高斯模糊
      */
     public void setBlurImage(boolean forceUpdate) {
-        final Snap3Adapter adapter = (Snap3Adapter) mRecyclerView.getAdapter();
+        final Snap3AdapterBannerBar adapter = (Snap3AdapterBannerBar) mRecyclerView.getAdapter();
         final int mCurViewPosition = mRecyclerView.getCurrentItem();
 
         boolean isSamePosAndNotUpdate = (mCurViewPosition == mLastDraPosition) && !forceUpdate;

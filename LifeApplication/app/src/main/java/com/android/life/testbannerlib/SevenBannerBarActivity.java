@@ -17,7 +17,7 @@ import com.android.life.R;
 import java.util.ArrayList;
 
 
-public class SevenActivity extends AppCompatActivity {
+public class SevenBannerBarActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView mRecyclerView2;
@@ -45,7 +45,7 @@ public class SevenActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(manager);
         ScrollLinearHelper snapHelper = new ScrollLinearHelper();
         snapHelper.attachToRecyclerView(mRecyclerView);
-        SnapAdapter adapter = new SnapAdapter(this);
+        SnapAdapterBannerBar adapter = new SnapAdapterBannerBar(this);
         mRecyclerView.setAdapter(adapter);
         adapter.addAll(getData());
     }
@@ -56,7 +56,7 @@ public class SevenActivity extends AppCompatActivity {
         mRecyclerView2.setLayoutManager(manager);
         LinearSnapHelper snapHelper = new LinearSnapHelper();
         snapHelper.attachToRecyclerView(mRecyclerView2);
-        SnapAdapter adapter = new SnapAdapter(this);
+        SnapAdapterBannerBar adapter = new SnapAdapterBannerBar(this);
         mRecyclerView2.setAdapter(adapter);
         adapter.addAll(getData());
     }
@@ -68,7 +68,7 @@ public class SevenActivity extends AppCompatActivity {
         mRecyclerView3.setLayoutManager(manager);
         ScrollPageHelper snapHelper = new ScrollPageHelper(Gravity.START,false);
         snapHelper.attachToRecyclerView(mRecyclerView3);
-        SnapAdapter adapter = new SnapAdapter(this);
+        SnapAdapterBannerBar adapter = new SnapAdapterBannerBar(this);
         mRecyclerView3.setAdapter(adapter);
         adapter.addAll(getData());
     }
@@ -80,7 +80,7 @@ public class SevenActivity extends AppCompatActivity {
         mRecyclerView4.setLayoutManager(manager);
         ScrollSnapHelper snapHelper = new ScrollSnapHelper();
         snapHelper.attachToRecyclerView(mRecyclerView4);
-        SnapAdapter adapter = new SnapAdapter(this);
+        SnapAdapterBannerBar adapter = new SnapAdapterBannerBar(this);
         mRecyclerView4.setAdapter(adapter);
         adapter.addAll(getData());
     }

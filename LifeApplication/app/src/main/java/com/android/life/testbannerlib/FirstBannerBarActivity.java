@@ -21,7 +21,7 @@ import com.android.life.R;
  * 作者：PC
  */
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstBannerBarActivity extends AppCompatActivity {
 
 
     private int[] imgs = {
@@ -79,7 +79,7 @@ public class FirstActivity extends AppCompatActivity {
         banner.setOnBannerClickListener(new BannerView.OnBannerClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(FirstActivity.this,position+"被点击呢",Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstBannerBarActivity.this,position+"被点击呢",Toast.LENGTH_SHORT).show();
             }
         });
         //轮播图滑动事件

@@ -21,7 +21,7 @@ import com.android.life.R;
  * 作者：PC
  */
 
-public class SixActivity extends AppCompatActivity {
+public class SixBannerBarActivity extends AppCompatActivity {
 
     private int[] imgs = {
             R.drawable.bg_kites_min,
@@ -72,7 +72,7 @@ public class SixActivity extends AppCompatActivity {
         banner.setOnBannerClickListener(new BannerView.OnBannerClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(SixActivity.this,position+"被点击呢",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SixBannerBarActivity.this,position+"被点击呢",Toast.LENGTH_SHORT).show();
             }
         });
     }

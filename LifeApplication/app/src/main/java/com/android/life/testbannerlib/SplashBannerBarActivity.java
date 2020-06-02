@@ -1,21 +1,24 @@
 package com.android.life.testbannerlib;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.bannerlib.banner.adapter.AbsLoopPagerAdapter;
+import com.android.bannerlib.banner.adapter.AbsDynamicPagerAdapter;
 import com.android.bannerlib.banner.view.BannerView;
+import com.android.life.MainActivity;
 import com.android.life.R;
 
 
-public class SecondActivity extends AppCompatActivity {
+
+
+public class SplashBannerBarActivity extends AppCompatActivity {
 
     private int[] imgs = {
             R.drawable.bg_kites_min,
@@ -25,41 +28,32 @@ public class SecondActivity extends AppCompatActivity {
             R.drawable.bg_magnolia_trees_min,
     };
     private BannerView banner;
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(banner!=null){
-            banner.pause();
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(banner!=null){
-            banner.resume();
-        }
-    }
+    private Button btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-
+        setContentView(R.layout.activity_five);
         initBanner();
+        initListener();
     }
+
+    private void initListener() {
+        btn = (Button) findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SplashBannerBarActivity.this, MainActivity.class));
+            }
+        });
+    }
+
 
     private void initBanner() {
         banner = (BannerView) findViewById(R.id.banner);
-        banner.setAdapter(new ImageNormalAdapter(banner));
+        banner.setPlayDelay(0);
+        banner.setAdapter(new ImageNormalAdapter());
         banner.setHintGravity(1);
-        banner.setPlayDelay(2000);
         banner.setHintPadding(20,0, 20,20);
         banner.setOnBannerClickListener(new BannerView.OnBannerClickListener() {
             @Override
@@ -67,30 +61,37 @@ public class SecondActivity extends AppCompatActivity {
 
             }
         });
+        banner.setOnPageListener(new BannerView.OnPageListener() {
+            @Override
+            public void onPageChange(int position) {
+                if(position==imgs.length-1){
+                    btn.setVisibility(View.VISIBLE);
+                }else {
+                    btn.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
 
-    private class ImageNormalAdapter extends AbsLoopPagerAdapter {
 
-        public ImageNormalAdapter(BannerView viewPager) {
-            super(viewPager);
-        }
+    private class ImageNormalAdapter extends AbsDynamicPagerAdapter {
 
         @Override
         public View getView(ViewGroup container, int position) {
             ImageView view = new ImageView(container.getContext());
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs[position]);
-            Bitmap bitmap1 = ImageBitmapUtils.compressByQuality(bitmap, 50, false);
-            view.setImageBitmap(bitmap1);
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT));
+            view.setImageResource(imgs[position]);
             return view;
         }
 
         @Override
-        public int getRealCount() {
+        public int getCount() {
             return imgs.length;
         }
     }
+
 
 }

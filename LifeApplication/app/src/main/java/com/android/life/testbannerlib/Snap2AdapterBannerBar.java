@@ -11,10 +11,10 @@ import com.android.baseadapterlibrary.adapter.BaseAdapter;
 import com.android.baseadapterlibrary.adapter.BaseViewHolder;
 import com.android.life.R;
 
-public class Snap2Adapter extends BaseAdapter<Integer> {
+public class Snap2AdapterBannerBar extends BaseAdapter<Integer> {
 
 
-    Snap2Adapter(Context context) {
+    Snap2AdapterBannerBar(Context context) {
         super(context, R.layout.item_snap2);
     }
 

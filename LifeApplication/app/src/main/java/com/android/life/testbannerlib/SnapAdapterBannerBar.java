@@ -10,9 +10,9 @@ import com.android.baseadapterlibrary.itemType.BaseMViewHolder;
 import com.android.baseadapterlibrary.itemType.RecyclerArrayAdapter;
 import com.android.life.R;
 
-public class SnapAdapter extends RecyclerArrayAdapter<String> {
+public class SnapAdapterBannerBar extends RecyclerArrayAdapter<String> {
 
-    public SnapAdapter(Context context) {
+    public SnapAdapterBannerBar(Context context) {
         super(context);
     }
 

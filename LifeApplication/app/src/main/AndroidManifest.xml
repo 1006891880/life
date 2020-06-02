@@ -16,16 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".testbannerlib.FirstActivity"/>
-        <activity android:name=".testbannerlib.SecondActivity"/>
-        <activity android:name=".testbannerlib.ThirdActivity"/>
-        <activity android:name=".testbannerlib.FourActivity"/>
-        <activity android:name=".testbannerlib.SplashActivity"/>
-        <activity android:name=".testbannerlib.SixActivity"/>
-        <activity android:name=".testbannerlib.SevenActivity"/>
+        <activity android:name=".testbannerlib.FirstBannerBarActivity"/>
+        <activity android:name=".testbannerlib.SecondBannerBarActivity"/>
+        <activity android:name=".testbannerlib.ThirdBannerBarActivity"/>
+        <activity android:name=".testbannerlib.FourBannerBarActivity"/>
+        <activity android:name=".testbannerlib.SplashBannerBarActivity"/>
+        <activity android:name=".testbannerlib.SixBannerBarActivity"/>
+        <activity android:name=".testbannerlib.SevenBannerBarActivity"/>
         <activity android:name=".testbannerlib.EightActivity"/>
-        <activity android:name=".testbannerlib.NightActivity"/>
-        <activity android:name=".testbannerlib.BannerActivity"/>
+        <activity android:name=".testbannerlib.NightBannerBarActivity"/>
+        <activity android:name=".testbannerlib.BannerActivity"
+            android:label="@string/banner_name"/>
     </application>
 
 </manifest>

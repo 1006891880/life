@@ -6,22 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.bannerlib.banner.adapter.AbsStaticPagerAdapter;
-import com.android.bannerlib.banner.hintview.TextHintView;
+import com.android.bannerlib.banner.adapter.AbsLoopPagerAdapter;
 import com.android.bannerlib.banner.view.BannerView;
 import com.android.life.R;
 
-/**
- * Created by PC on 2017/11/21.
- * 作者：PC
- */
 
-public class FourActivity extends AppCompatActivity {
+public class SecondBannerBarActivity extends AppCompatActivity {
 
     private int[] imgs = {
             R.drawable.bg_kites_min,
@@ -56,28 +50,31 @@ public class FourActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_four);
+        setContentView(R.layout.activity_second);
 
         initBanner();
     }
 
     private void initBanner() {
         banner = (BannerView) findViewById(R.id.banner);
-        banner.setHintPadding(0, 20, 20,20);
-        banner.setHintView(new TextHintView(this));
-        banner.setAdapter(new ImageNormalAdapter());
+        banner.setAdapter(new ImageNormalAdapter(banner));
+        banner.setHintGravity(1);
+        banner.setPlayDelay(2000);
+        banner.setHintPadding(20,0, 20,20);
         banner.setOnBannerClickListener(new BannerView.OnBannerClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(FourActivity.this,
-                        position+"被点击呢",Toast.LENGTH_SHORT).show();
+
             }
         });
     }
 
 
+    private class ImageNormalAdapter extends AbsLoopPagerAdapter {
 
-    private class ImageNormalAdapter extends AbsStaticPagerAdapter {
+        public ImageNormalAdapter(BannerView viewPager) {
+            super(viewPager);
+        }
 
         @Override
         public View getView(ViewGroup container, int position) {
@@ -91,7 +88,7 @@ public class FourActivity extends AppCompatActivity {
         }
 
         @Override
-        public int getCount() {
+        public int getRealCount() {
             return imgs.length;
         }
     }

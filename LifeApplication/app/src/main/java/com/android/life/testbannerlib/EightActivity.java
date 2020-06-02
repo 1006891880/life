@@ -73,7 +73,7 @@ public class EightActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        Snap3Adapter adapter = new Snap3Adapter(this);
+        Snap3AdapterBannerBar adapter = new Snap3AdapterBannerBar(this);
         adapter.setData(getData());
         mRecyclerView.setDelayTime(3000)
                 .setFlingSpeed(10000)
@@ -98,7 +98,7 @@ public class EightActivity extends AppCompatActivity {
         manager.attach(recyclerView2,100);
         manager.setItemTransformer(new GalleryScaleTransformer( 0.2f,30));
         recyclerView2.setLayoutManager(manager);
-        Snap3Adapter adapter = new Snap3Adapter(this);
+        Snap3AdapterBannerBar adapter = new Snap3AdapterBannerBar(this);
         adapter.setData(getData());
         recyclerView2.setAdapter(adapter);
     }
@@ -125,7 +125,7 @@ public class EightActivity extends AppCompatActivity {
      * 设置背景高斯模糊
      */
     public void setBlurImage(boolean forceUpdate) {
-        final Snap3Adapter adapter = (Snap3Adapter) mRecyclerView.getAdapter();
+        final Snap3AdapterBannerBar adapter = (Snap3AdapterBannerBar) mRecyclerView.getAdapter();
         final int mCurViewPosition = mRecyclerView.getCurrentItem();
 
         boolean isSamePosAndNotUpdate = (mCurViewPosition == mLastDraPosition) && !forceUpdate;

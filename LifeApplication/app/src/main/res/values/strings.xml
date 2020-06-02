@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LifeApplication</string>
+    <string name="banner_name">BannerModule</string>
+    <string name="dialog_name">DialogModule</string>
 </resources>

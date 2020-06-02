@@ -17,11 +17,11 @@ import com.android.life.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Snap3Adapter  extends RecyclerView.Adapter <Snap3Adapter.MyViewHolder>{
+public class Snap3AdapterBannerBar extends RecyclerView.Adapter <Snap3AdapterBannerBar.MyViewHolder>{
 
 
     private Context mContext;
-    Snap3Adapter(Context context){
+    Snap3AdapterBannerBar(Context context){
         this.mContext =context;
     }
 
